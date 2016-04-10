@@ -3,12 +3,12 @@
 %
 %  Main script for tracking, with a gaussian kernel.
 %
-%  João F. Henriques, 2012
+%  Jo?o F. Henriques, 2012
 %  http://www.isr.uc.pt/~henriques/
 
 
 %choose the path to the videos (you'll be able to choose one with the GUI)
-base_path = './data/';
+base_path = './Coke';
 
 
 %parameters according to the paper
@@ -94,7 +94,7 @@ for frame = 1:numel(img_files),
 	%visualization
 	rect_position = [pos([2,1]) - target_sz([2,1])/2, target_sz([2,1])];
 	if frame == 1,  %first frame, create GUI
-		figure('Number','off', 'Name',['Tracker - ' video_path])
+		figure()
 		im_handle = imshow(im, 'Border','tight', 'InitialMag',200);
 		rect_handle = rectangle('Position',rect_position, 'EdgeColor','g');
 	else
