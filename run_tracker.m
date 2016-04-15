@@ -8,7 +8,7 @@
 
 
 %choose the path to the videos (you'll be able to choose one with the GUI)
-base_path = './Coke';
+base_path = './Suv';
 
 
 %parameters according to the paper
@@ -44,7 +44,7 @@ cos_window = hann(sz(1)) * hann(sz(2))';
 
 time = 0;  %to calculate FPS
 positions = zeros(numel(img_files), 2);  %to calculate precision
-
+PsrVal = zeros(numel(img_files),1);
 for frame = 1:numel(img_files),
 	%load image
 	im = imread([video_path img_files{frame}]);
@@ -64,7 +64,7 @@ for frame = 1:numel(img_files),
 		%calculate response of the classifier at all locations
 		k = dense_gauss_kernel(sigma, x, z);
 		response = real(ifft2(alphaf .* fft2(k)));   %(Eq. 9)
-		
+        PsrVal(frame) = PsrCalculation(response);
 		%target location is at the maximum response
 		[row, col] = find(response == max(response(:)), 1);
 		pos = pos - floor(sz/2) + [row, col];

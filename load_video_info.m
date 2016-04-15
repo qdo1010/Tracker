@@ -14,7 +14,7 @@ function [img_files, pos, target_sz, resize_image, ground_truth, ...
 %   http://www.isr.uc.pt/~henriques/
 
 	%load ground truth from text file (MILTrack's format)
-	text_files = dir([video_path '*.txt']);
+	text_files = dir([video_path '*.txt']); 
 	assert(~isempty(text_files), 'No initial position and ground truth (*.txt) to load.')
 
 	f = fopen([video_path text_files(1).name]);
