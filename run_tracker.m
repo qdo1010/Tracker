@@ -8,7 +8,7 @@
 
 
 %choose the path to the videos (you'll be able to choose one with the GUI)
-base_path = './Suv';
+base_path = './Coke';
 
 
 %parameters according to the paper

@@ -137,7 +137,7 @@ for frame = 1:numel(img_files),
 	if frame == 1,  %first frame, create GUI
         h=figure();
         im_handle = imshow(im, 'Border','tight', 'InitialMag',200);
-        rect_handle = rectangle('Visible', 'off','Position',rect_position, 'EdgeColor','g');
+        rect_handle = rectangle('Visible', 'off','Position',rect_position, 'EdgeColor','b');
         rect_handle2 = rectangle('Visible', 'off','Position',rect_position, 'EdgeColor','r');
     end
     
